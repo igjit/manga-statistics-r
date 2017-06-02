@@ -33,3 +33,6 @@ vignettes/*.pdf
 *.knit.md
 
 *~
+
+/packrat/src/
+packrat/lib*/
