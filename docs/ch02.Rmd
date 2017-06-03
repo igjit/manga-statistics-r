@@ -2,6 +2,9 @@
 output:
   md_document:
     variant: markdown_github
+    pandoc_args: [
+      "--atx-headers"
+    ]
 ---
 
 # 第2章 データ全体の雰囲気をつかもう！ 数量データ編
