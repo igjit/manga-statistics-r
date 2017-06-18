@@ -1,0 +1,144 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+    pandoc_args: [
+      "--atx-headers"
+    ]
+---
+
+# 第4章 基準値と偏差値
+
+## 1. 基準化と基準値
+
+英語と古典のテストの結果
+
+```{r}
+english.scores <- c(90, 81, 73, 97, 85, 60, 74, 64, 72, 67, 87, 78, 85, 96, 77, 100, 92, 86)
+japanese.scores <- c(71, 90, 79, 70, 67, 66, 60, 83, 57, 85, 93, 89, 78, 74, 65, 78, 53, 80)
+```
+
+英語の平均点
+
+```{r}
+mean(english.scores)
+```
+
+古典の平均点
+
+```{r}
+mean(japanese.scores)
+```
+
+日本史と生物のテストの結果
+
+```{r}
+history.scores <- c(73, 61, 14, 41, 49, 87, 69, 65, 36, 7, 53, 100, 57, 45, 56, 34, 37, 70)
+biology.scores <- c(59, 73, 47, 38, 63, 56, 15, 53, 80, 50, 41, 62, 44, 26, 91, 35, 53, 68)
+```
+
+標準偏差の式 ([2章](./ch02.md)より)
+
+```{r}
+standard.deviation <- function(values) {
+    m <- mean(values)
+    sqrt(sum((values - m)^2) / length(values))
+}
+```
+
+日本史の標準偏差
+
+```{r}
+standard.deviation(history.scores)
+```
+
+生物の標準偏差
+
+```{r}
+standard.deviation(biology.scores)
+```
+
+基準値の式
+
+```{r}
+norm <- function(values) {
+    m <- mean(values)
+    s <- standard.deviation(values)
+    (values - m) / s
+}
+```
+
+日本史の基準値
+
+```{r}
+norm(history.scores)
+```
+
+生物の基準値
+
+```{r}
+norm(biology.scores)
+```
+
+## 2. 基準値の特徴
+
+基準値の平均
+
+```{r}
+mean(norm(history.scores))
+```
+
+(参照: [指数表記](https://ja.wikipedia.org/wiki/%E6%8C%87%E6%95%B0%E8%A1%A8%E8%A8%98))
+
+基準値の標準偏差
+
+```{r}
+standard.deviation(norm(history.scores))
+```
+
+## 3. 偏差値
+
+偏差値の式
+
+```{r}
+deviation <- function(values) {
+    50 + (norm(values) * 10)
+}
+```
+
+日本史の偏差値
+
+```{r}
+deviation(history.scores)
+```
+
+生物の偏差値
+
+```{r}
+deviation(biology.scores)
+```
+
+#### 偏差値の特徴
+
+偏差値の平均
+
+```{r}
+mean(deviation(history.scores))
+```
+
+偏差値の標準偏差
+
+```{r}
+standard.deviation(deviation(history.scores))
+```
+
+## 例題
+
+100m走の結果
+
+```{r}
+race.times <- c(16.3, 22.4, 18.5, 18.7, 20.1)
+```
+
+- 「100m走の基準値」の平均が0なのを確認
+- 「100m走の基準値」の標準偏差が1なのを確認
