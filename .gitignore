@@ -34,5 +34,5 @@ vignettes/*.pdf
 
 *~
 
-/packrat/src/
 packrat/lib*/
+packrat/src/
