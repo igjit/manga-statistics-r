@@ -34,6 +34,11 @@ Version: 1.17.1
 Hash: 97cb6f6293cd18d17df77a6383cc6763
 Requires: bitops
 
+Package: colorspace
+Source: CRAN
+Version: 1.3-2
+Hash: 0bf8618b585fa98eb23414cd3ab95118
+
 Package: crayon
 Source: CRAN
 Version: 1.3.2
@@ -77,6 +82,12 @@ Source: CRAN
 Version: 1.16
 Hash: 3b8dc00d51027c6d041d56bc92136452
 Requires: digest, evaluate, highr, markdown, stringr, yaml
+
+Package: lmtest
+Source: CRAN
+Version: 0.9-35
+Hash: 370fc77c3949074497a1dac38180b4a9
+Requires: zoo
 
 Package: magrittr
 Source: CRAN
@@ -163,6 +174,12 @@ Version: 0.2
 Hash: 699a5536794e0d1e690d98057549d7a8
 Requires: htmltools, knitr, rmarkdown
 
+Package: vcd
+Source: CRAN
+Version: 1.4-3
+Hash: 77757721dbf90bbbaab7a2e2be604bc2
+Requires: colorspace, lmtest
+
 Package: xtable
 Source: CRAN
 Version: 1.8-2
@@ -172,3 +189,8 @@ Package: yaml
 Source: CRAN
 Version: 2.1.14
 Hash: c81230c3a7d9ba20607ad6b4331173d1
+
+Package: zoo
+Source: CRAN
+Version: 1.8-0
+Hash: df9711767f56f086e8a8d1f0fb926ff6
