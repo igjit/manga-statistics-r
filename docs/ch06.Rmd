@@ -44,13 +44,13 @@ survey.brand <- c("Theremes", "Channelior", "Bureperry", "Bureperry", "Channelio
 集計
 
 ```{r}
-tapply(survey.age, survey.brand, c)
+tapply(survey.age, survey.brand, identity)
 ```
 
 グラフ
 
 ```{r}
-stripchart(tapply(survey.age, survey.brand, c), vertical = TRUE)
+stripchart(tapply(survey.age, survey.brand, identity), vertical = TRUE)
 ```
 
 相関比を求める関数
