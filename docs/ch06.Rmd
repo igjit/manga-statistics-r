@@ -81,7 +81,7 @@ asked.out.table
 
 パッケージのインストール
 
-```{r message = FALSE, results = "hide"}
+```{r eval = FALSE}
 install.packages("vcd")
 ```
 
