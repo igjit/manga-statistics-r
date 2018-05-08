@@ -1,3 +1,0 @@
-#! /bin/bash
-
-Rscript -e 'for (file in list.files("docs", "\\.Rmd$", full.names = TRUE)) rmarkdown::render(file, quiet = TRUE)'
